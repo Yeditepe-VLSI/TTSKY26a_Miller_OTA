@@ -58,7 +58,7 @@ To verify the buffer's performance and stability:
 
 *   **Load Setup:** Ensure a **3 pF capacitive load** is connected to the output pin (accounting for any parasitic capacitance from probes or traces).
 *   **Pulse & Transient Test:** 
-    *   Apply a pulse signal at the input pin (`?`) with an amplitude ranging from **0.5V to 1.0V**.
+    *   Apply a pulse signal at the input pin (`?`) with an amplitude ranging from **0.4V to 1.0V**.
     *   Run a **1 $\mu$s transient test** to observe the slewing and settling behavior. 
     *   Verify that the output accurately follows the input without sustained ringing, confirming the 60+ dB precision and the stability of the compensation network under load.
 *   **Power-Up Test:** Ramp the $V_{DD}$ from 0V to 1.8V to confirm the **Startup Circuit** successfully initializes the BMR.
