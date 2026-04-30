@@ -22,7 +22,7 @@ This project features a **Unity-Gain Buffer** based on a **Two-Stage Miller OTA*
 
 ### Performance Metrics (Simulated)
 *   **Open-Loop Gain:** > 60 dB
-*   **Phase Margin:** [X derece]
+*   **Phase Margin:** > 65 degrees
 *   **Power Consumption:** [X uW]
 *   **Slew Rate:** [X V/µs]
 *   **Target Load:** 3 pF
@@ -43,7 +43,7 @@ At its core, the Two-Stage Miller OTA provides a high **open-loop gain of over 6
 
 ### 2. Miller Compensation & Stability
 Driving a capacitive load in a unity-gain configuration is the most demanding condition for stability. To address this:
-*   **Pole-Splitting:** A Miller compensation capacitor is placed between the differential input stage and the common-source gain stage. This pushes the non-dominant pole to higher frequencies, securing an adequate phase margin to prevent oscillation or excessive ringing at the output.
+*   **Lead Compensation** A Miller compensation capacitor and a resistor is placed between the differential input stage and the common-source gain stage. This pushes the non-dominant pole to higher frequencies, securing an adequate phase margin to prevent oscillation or excessive ringing at the output.
 
 ### 3. Self-Biasing (BMR & Startup)
 The circuit is entirely self-contained and does not require an external bias current source:
@@ -67,7 +67,7 @@ To verify the buffer's performance and stability:
 
 To fully test this project on a physical bench, the following equipment is required:
 
-*   **Signal Generator / Oscillator:** To provide the 0.5V - 1.0V pulse and AC input signals.
+*   **Signal Generator / Oscillator:** To provide the 0.4V - 1.0V pulse and AC input signals.
 *   **DC Power Supply:** Stable 1.8V source for the VDD rail.
 *   **Oscilloscope:** To simultaneously monitor the input and output waveforms, confirming tracking accuracy and settling time.
 *   **Capacitor:** A discrete **3 pF capacitor** acting as the load.
@@ -82,8 +82,8 @@ To fully test this project on a physical bench, the following equipment is requi
 ## Resources
 
 **Project References:**
-- [Design of Analog CMOS Integrated Circuits](https://www.mheducation.com/highered/product/design-analog-cmos-integrated-circuits-razavi/M9780072524932.html) - Behzad Razavi
 - [Analog Integrated Circuit Design by Simulation: Techniques, Tools, and Methods](https://www.mheducation.com/highered/mhp/product/analog-integrated-circuit-design-simulation-techniques-tools-methods?pd=search&viewOption=student) - Uğur Çilingiroğlu
+- [Design of Analog CMOS Integrated Circuits](https://www.mheducation.com/highered/product/design-analog-cmos-integrated-circuits-razavi/M9780072524932.html) - Behzad Razavi
 
 **Tiny Tapeout Resources:**
 - [FAQ](https://tinytapeout.com/faq/)
