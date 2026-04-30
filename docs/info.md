@@ -10,9 +10,9 @@ You can also include images in this folder and reference them in the markdown. E
 ## How it works
 
 This project features a Unity-Gain Buffer based on a Two-Stage Miller OTA, integrated with a Beta-Multiplier Reference (BMR) and a Startup Circuit, all implemented in the Skywater 130nm (sky130) PDK.
-1. Unity-Gain Configuration & Open-Loop GainAt its core, the Two-Stage Miller OTA provides a high open-loop gain of over 60 dB. To create the buffer configuration, the inverting input is directly hardwired to the output ($V_{out}$) in a strict negative feedback loop. This transforms the internal differential amplifier into a single-input, single-output voltage follower.Precision Tracking: The >60 dB open-loop gain minimizes the steady-state error, ensuring the closed-loop voltage gain is extremely close to unity ($A_v \approx 1$). The output accurately tracks the non-inverting input.Load Drive Capability: The transconductance ($g_m$) of the second stage and the compensation network are carefully sized to stably drive a 3 pF capacitive load without degrading performance.
+1. Unity-Gain Configuration & Open-Loop Gain At its core, the Two-Stage Miller OTA provides a high open-loop gain of over 60 dB. To create the buffer configuration, the inverting input is directly hardwired to the output ($V_{out}$) in a strict negative feedback loop. This transforms the internal differential amplifier into a single-input, single-output voltage follower.Precision Tracking: The >60 dB open-loop gain minimizes the steady-state error, ensuring the closed-loop voltage gain is extremely close to unity ($A_v \approx 1$). The output accurately tracks the non-inverting input.Load Drive Capability: The transconductance ($g_m$) of the second stage and the compensation network are carefully sized to stably drive a 3 pF capacitive load without degrading performance.
 
-2. Miller Compensation & StabilityDriving a capacitive load in a unity-gain configuration is the most demanding condition for stability. To address this:Pole-Splitting: A Miller compensation capacitor is placed between the differential input stage and the common-source gain stage. This pushes the non-dominant pole to higher frequencies, securing an adequate phase margin to prevent oscillation or excessive ringing at the output.
+2. Miller Compensation & Stability Driving a capacitive load in a unity-gain configuration is the most demanding condition for stability. To address this: Lead Compensation: A Miller compensation capacitor and a res is placed between the differential input stage and the common-source gain stage. This pushes the non-dominant pole to higher frequencies, securing an adequate phase margin to prevent oscillation or excessive ringing at the output.
 
 3. Self-Biasing (BMR & Startup)The circuit is entirely self-contained and does not require an external bias current source:Beta-Multiplier Reference (BMR): Internally generates a stable reference current ($I_{ref}$), rendering the OTA's biasing largely independent of supply voltage ($V_{DD}$) variations.Startup Circuit: Guarantees that upon power-up, the BMR is forced out of its degenerate zero-current state and reliably reaches its target operating point immediately as the 1.8V power rail stabilizes.
 
@@ -28,7 +28,7 @@ Verify that the output accurately follows the input without sustained ringing, c
 
 ## External hardware
 
-Signal Generator / Oscillator: To provide the 0.5V - 1.0V pulse and AC input signals.
+Signal Generator / Oscillator: To provide the 0.4V - 1.0V pulse and AC input signals.
 
 DC Power Supply: Stable 1.8V source for the VDD rail.
 
