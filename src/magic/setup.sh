@@ -1,2 +1,2 @@
-echo 'source /usr/local/share/pdk/sky130B/libs.tech/magic/sky130B.magicrc' > ./.magicrc
+echo 'source /usr/local/share/pdk/sky130A/libs.tech/magic/sky130A.magicrc' > ./.magicrc
 magic magic_init_project.tcl
