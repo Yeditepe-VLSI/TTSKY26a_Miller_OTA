@@ -40,6 +40,9 @@ To rigorously verify the buffer's performance, stability, and self-biasing mecha
     *   *Verification:* The output must accurately track the input. You should observe a fast response (correlating to the simulated **18.65 V/µs** slew rate). Crucially, the signal must settle without sustained ringing or oscillation. This confirms the stability of the lead-compensation network and the >65° phase margin under load.
 *   **DC Precision Tracking:** Slowly sweep the DC input voltage across the operating range. Verify that the output tracks the input with minimal steady-state error ($V_{out} \approx V_{in}$), which physically validates the high **> 60 dB open-loop gain** of the internal OTA.
 *   **Power-Up & Startup Test:** Ramp the $V_{DD}$ supply rail from **0V to 1.8V**. Monitor the circuit's response to confirm that the **Startup Circuit** successfully kicks the Beta-Multiplier Reference (BMR) out of its degenerate zero-current state and reliably establishes the nominal operating point.
+<img width="1600" height="602" alt="WhatsApp Image 2026-04-29 at 21 50 48" src="https://github.com/user-attachments/assets/114468d2-9599-4061-9e53-37e2eaad5cf3" />
+<img width="1033" height="785" alt="WhatsApp Image 2026-04-29 at 21 50 48 (1)" src="https://github.com/user-attachments/assets/c84b0005-3fb7-485d-8878-9dbff0fbccfe" />
+<img width="1033" height="785" alt="WhatsApp Image 2026-04-29 at 21 50 40" src="https://github.com/user-attachments/assets/bdfe0e0c-6f67-4335-8e90-9e8f37cca90e" />
 
 
 ## External hardware
