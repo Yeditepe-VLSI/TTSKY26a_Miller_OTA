@@ -112,7 +112,7 @@ X2 S3 G D2 VSUBS sky130_fd_pr__nfet_01v8 ad=0.725 pd=5.29 as=0.725 ps=5.29 w=5 l
 X3 S1 G D0 VSUBS sky130_fd_pr__nfet_01v8 ad=0.725 pd=5.29 as=1.45 ps=10.58 w=5 l=1
 .ends
 
-.subckt tt_um_analog_ota_version1 clk ena rst_n ua[0] ua[1] VDPWR VGND
+.subckt tt_um_analog_ota_version1 ua[0] ua[1] VDPWR VGND
 Xsky130_fd_pr__nfet_01v8_VUE4HL_0 sky130_fd_pr__pfet_01v8_NDNS9K_0/S VGND VGND sky130_fd_pr__nfet_01v8_VUE4HL
 Xsky130_fd_pr__nfet_01v8_T4AS2N_0 VGND VGND VGND VGND sky130_fd_pr__nfet_01v8_T4AS2N
 Xsky130_fd_pr__nfet_01v8_V5JU8A_0 VGND sky130_fd_pr__pfet_01v8_RAUDFE_1/S sky130_fd_pr__pfet_01v8_RAUDFE_1/S
