@@ -30,6 +30,18 @@ This project features a **Unity-Gain Buffer** based on a **Two-Stage Miller OTA*
 *       P_Total:[162.72 µW]
 *   **Slew Rate:** [18.65 V/µs]
 *   **Target Load:** 3 pF
+## Specifications
+
+| Parameter          | Value             |
+|--------------------|-------------------|
+| Topology           | Miller OTA        |
+| External Network   | Unity-gain Buffer |
+| Input Resistance   | 25 KΩ             |
+| Output Capacitance | 3 pF              |
+| Input Range        | 0.4 V – 1 V       |
+| Output Range       | 0.4 V – 1 V       |
+| Settling Time      | 100 ns            |
+| Settling Error     | 0.03 %            |
 
 ### Pinout Configuration
 Please refer to the following analog pin assignments for testing:
@@ -57,9 +69,8 @@ At its core, the Two-Stage Miller OTA provides a  **open-loop gain of over 60 dB
 ### 3. Miller Compensation with Lead Resistor
 Driving a 3 pF capacitive load in a unity-gain configuration represents the absolute worst-case scenario for amplifier stability. To achieve robust stability, we rely on a **Miller compensation network**, specifically enhanced with a **lead compensation** technique:
 
-*   **Pole-Splitting & The RHP Zero:** At its core, the circuit uses a Miller capacitor placed across the second stage to perform the essential task of pole-splitting. While this successfully separates the poles to stabilize the amplifier, the capacitor also creates an unintended high-frequency feedforward path. This path generates a Right-Half-Plane (RHP) zero, which adds phase lag and degrades the phase margin, pushing the system toward instability.
 *   **Lead Compensation Strategy:** To neutralize this RHP zero while maintaining the crucial Miller pole-splitting effect, we added a "nulling resistor" in series with the Miller capacitor. This lead compensation breaks the high-frequency feedforward path. By carefully sizing this resistance, we force the RHP zero to infinity or move it into the Left-Half-Plane (LHP). This restores a healthy phase margin, ensuring the buffer remains completely stable without sustained ringing.
-*   **Active MOS Resistor for Area Efficiency:** In integrated circuit layout, large passive resistors consume a massive amount of valuable silicon real estate. Given the strict area boundaries of a TinyTapeout tile, using a traditional passive resistor for the lead compensation was highly inefficient. Instead, we implemented this series resistance using an **active MOS transistor biased deep in the linear (triode) region**. This MOSFET performs the exact same zero-nulling function but takes up only a fraction of the layout area, demonstrating a practical and space-efficient approach to modern CMOS analog design.
+*   **Active MOS Resistor for Area & PVT Robustness:** In integrated circuit layout, large passive resistors consume a massive amount of valuable silicon real estate. Given the strict area boundaries of a TinyTapeout tile, using a traditional passive resistor for lead compensation was highly inefficient. Instead, we implemented this series resistance using an **active MOS transistor biased deep in the linear (triode) region**. Beyond drastically reducing the layout footprint, this active approach provides a crucial advantage for **PVT (Process, Voltage, and Temperature)** stability. The resistance of a passive poly-resistor varies completely independently of the amplifier's transconductance ($g_m$). In contrast, an active MOS resistor naturally tracks the $g_m$ shifts of the second-stage transistors across different temperature and process corners. This correlated tracking ensures that the RHP zero cancellation remains perfectly tuned and the phase margin stays stable under all operating conditions.
 
 ### 4.Beta-Multiplier Reference & Startup
 The system is designed to be completely self-sufficient. It operates entirely without the need for any external current sources or off-chip biasing networks:
