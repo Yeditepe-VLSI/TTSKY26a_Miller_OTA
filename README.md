@@ -43,6 +43,20 @@ This project features a **Unity-Gain Buffer** based on a **Two-Stage Miller OTA*
 | Settling Time      | 100 ns            |
 | Settling Error     | 0.03 %            |
 
+## Simulation Results
+
+| Corner | Temp (°C) | Unity-Gain Frequency (Hz) | Phase Margin (°) |
+|--------|:---------:|:-------------------------:|:----------------:|
+| TT     | -27       | 13,098,400                | 67.11            |
+| TT     | 25        | 11,107,500                | 67.36            |
+| TT     | 125       | 8,208,920                 | 70.01            |
+| SS     | -27       | 20,187,100                | 47.72            |
+| SS     | 25        | 15,799,900                | 59.71            |
+| SS     | 125       | 10,663,500                | 69.97            |
+| FF     | -27       | 11,260,300                | 64.01            |
+| FF     | 25        | 9,714,410                 | 65.09            |
+| FF     | 125       | 6,840,200                 | 70.12            |
+
 ### Pinout Configuration
 Please refer to the following analog pin assignments for testing:
 *   **Analog Input ($V_{in1}$):** `[ua[0]]`
@@ -90,6 +104,10 @@ To verify the buffer's performance and stability:
     *   Run a **1 µs transient test** to observe the slewing and settling behavior. 
     *   Verify that the output accurately follows the input without sustained ringing, confirming the 60+ dB precision and the stability of the compensation network under load.
 *   **Power-Up Test:** Ramp the $V_{DD}$ from 0V to 1.8V to confirm the **Startup Circuit** successfully initializes the BMR.
+
+<img width="1033" height="785" alt="WhatsApp Image 2026-05-01 at 13 29 02" src="https://github.com/user-attachments/assets/e1d0e36f-7625-4d95-aae4-c8f795522d02" />
+<img width="1033" height="785" alt="WhatsApp Image 2026-05-01 at 13 29 03 (1)" src="https://github.com/user-attachments/assets/7fe7b2a9-32d3-41a3-b7db-87d4262ca146" />
+<img width="1600" height="602" alt="WhatsApp Image 2026-05-01 at 13 29 03" src="https://github.com/user-attachments/assets/7d052c14-b5b4-4f8f-8544-771aeb7f46b6" />
 
 ## External hardware
 
