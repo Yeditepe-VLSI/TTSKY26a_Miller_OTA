@@ -40,9 +40,24 @@ To rigorously verify the buffer's performance, stability, and self-biasing mecha
     *   *Verification:* The output must accurately track the input. You should observe a fast response (correlating to the simulated **18.65 V/µs** slew rate). Crucially, the signal must settle without sustained ringing or oscillation. This confirms the stability of the lead-compensation network and the >65° phase margin under load.
 *   **DC Precision Tracking:** Slowly sweep the DC input voltage across the operating range. Verify that the output tracks the input with minimal steady-state error ($V_{out} \approx V_{in}$), which physically validates the high **> 60 dB open-loop gain** of the internal OTA.
 *   **Power-Up & Startup Test:** Ramp the $V_{DD}$ supply rail from **0V to 1.8V**. Monitor the circuit's response to confirm that the **Startup Circuit** successfully kicks the Beta-Multiplier Reference (BMR) out of its degenerate zero-current state and reliably establishes the nominal operating point.
-<img width="1600" height="602" alt="WhatsApp Image 2026-04-29 at 21 50 48" src="https://github.com/user-attachments/assets/114468d2-9599-4061-9e53-37e2eaad5cf3" />
-<img width="1033" height="785" alt="WhatsApp Image 2026-04-29 at 21 50 48 (1)" src="https://github.com/user-attachments/assets/c84b0005-3fb7-485d-8878-9dbff0fbccfe" />
-<img width="1033" height="785" alt="WhatsApp Image 2026-04-29 at 21 50 40" src="https://github.com/user-attachments/assets/bdfe0e0c-6f67-4335-8e90-9e8f37cca90e" />
+## Simulation Results
+
+| Corner | Temp (°C) | Unity-Gain Frequency (Hz) | Phase Margin (°) |
+|--------|:---------:|:-------------------------:|:----------------:|
+| TT     | -27       | 13,098,400                | 67.11            |
+| TT     | 25        | 11,107,500                | 67.36            |
+| TT     | 125       | 8,208,920                 | 70.01            |
+| SS     | -27       | 20,187,100                | 47.72            |
+| SS     | 25        | 15,799,900                | 59.71            |
+| SS     | 125       | 10,663,500                | 69.97            |
+| FF     | -27       | 11,260,300                | 64.01            |
+| FF     | 25        | 9,714,410                 | 65.09            |
+| FF     | 125       | 6,840,200                 | 70.12            |
+
+<img width="1033" height="785" alt="WhatsApp Image 2026-05-01 at 13 29 02" src="https://github.com/user-attachments/assets/4158c3df-f8c2-4728-938e-06dfe2089bbd" />
+<img width="1033" height="785" alt="WhatsApp Image 2026-05-01 at 13 29 03 (1)" src="https://github.com/user-attachments/assets/d32d3c77-3335-4ed7-b1bc-826a61a3a45b" />
+<img width="1600" height="602" alt="WhatsApp Image 2026-05-01 at 13 29 03" src="https://github.com/user-attachments/assets/f5289748-156f-4659-94cc-48f827e07038" />
+
 
 
 ## External hardware
