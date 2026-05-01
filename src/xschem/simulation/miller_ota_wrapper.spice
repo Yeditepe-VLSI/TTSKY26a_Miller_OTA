@@ -1,11 +1,11 @@
 ** sch_path: /home/tarator/github_repos/TTSKY26a_Miller_OTA/src/xschem/miller_ota_wrapper.sch
-**.subckt miller_ota_wrapper VDPWR VGND in out
+.subckt miller_ota_wrapper VDPWR VGND in out
 *.iopin VDPWR
 *.iopin VGND
 *.ipin in
 *.opin out
 x1 VDPWR out out in VGND miller_ota
-**.ends
+.ends
 
 * expanding   symbol:  miller_ota.sym # of pins=5
 ** sym_path: /home/tarator/github_repos/TTSKY26a_Miller_OTA/src/xschem/miller_ota.sym
