@@ -57,8 +57,8 @@ pinout:
   # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
   ua[0]: "in"
   ua[1]: "out"
-  ua[2]: ""
-  ua[3]: ""
+  ua[2]: "filter_in"
+  ua[3]: "filter_out"
   ua[4]: ""
   ua[5]: ""
 
