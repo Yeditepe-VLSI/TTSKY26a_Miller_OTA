@@ -1,14 +1,14 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1777598009
+timestamp 1778186451
 << nmos >>
 rect -15 -100 15 100
 << ndiff >>
-rect -75 88 -15 100
-rect -75 -88 -61 88
+rect -73 88 -15 100
+rect -73 -88 -61 88
 rect -27 -88 -15 88
-rect -75 -100 -15 -88
+rect -73 -100 -15 -88
 rect 15 88 73 100
 rect 15 -88 27 88
 rect 61 -88 73 88
@@ -45,10 +45,10 @@ rect 21 88 67 100
 rect 21 -88 27 88
 rect 61 -88 67 88
 rect 21 -100 67 -88
-rect -33 -138 33 -129
-rect -33 -172 -17 -138
-rect 17 -172 33 -138
-rect -33 -181 33 -172
+rect -37 -138 37 -132
+rect -37 -172 -17 -138
+rect 17 -172 37 -138
+rect -37 -178 37 -172
 << labels >>
 rlabel ndiffc -44 0 -44 0 0 D
 port 1 nsew
